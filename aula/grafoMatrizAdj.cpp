@@ -3,32 +3,33 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define DIM 4
 
-void inicializarMatriz (int matriz[5][5]) {
+void inicializarMatriz (int matriz[DIM][DIM]) {
 	int i, j;
-	for (i = 0; i < 5; i++) 
-		for (j = 0; j < 5; j++) {
+	for (i = 0; i < DIM; i++) 
+		for (j = 0; j < DIM; j++) {
 			matriz[i][j] = 0;
 		}
 
 }
 
 
-void inserir (int matriz[5][5], int orig, int dest) {
+void inserir (int matriz[DIM][DIM], int orig, int dest) {
 	matriz[orig][dest] = 1;
 }
 
 
-bool temAresta (int matriz[5][5], int orig, int dest) {
+bool temAresta (int matriz[DIM][DIM], int orig, int dest) {
 	if (matriz[orig][dest] == 1) return true;
 	else return false;
 }
 
-void imprimir (int matriz[5][5]) {
+void imprimir (int matriz[DIM][DIM]) {
 	
 	int i, j;
-	for (i = 0; i < 5; i++) {
-		for (j = 0; j < 5; j++) {
+	for (i = 0; i < DIM; i++) {
+		for (j = 0; j < DIM; j++) {
 			printf("%d ", matriz[i][j]);
 		}
 		printf ("\n");
@@ -36,24 +37,24 @@ void imprimir (int matriz[5][5]) {
 }
 
 
-int Gsaida (int m[5][5], int i) {
+int Gsaida (int m[DIM][DIM], int i) {
 	int j, resp = 0;
-	for (j = 0; j < 5; j++)
+	for (j = 0; j < DIM; j++)
 		if (m[i][j] == 1) resp++;
 
 	return resp;
 }
 
 
-int Gentrada (int matriz[5][5], int j) {
+int Gentrada (int matriz[DIM][DIM], int j) {
 	int i, resp = 0;
-	for (i = 0; i < 5; i++) 
+	for (i = 0; i < DIM; i++) 
 		if (matriz[i][j] == 1) resp++;
 
 	return resp;
 }
 
-void excluiArestas (int matriz[5][5], int i, int j) {
+void excluiArestas (int matriz[DIM][DIM], int i, int j) {
 	matriz[i][j] = 0;
 }
 
@@ -61,7 +62,7 @@ void excluiArestas (int matriz[5][5], int i, int j) {
 
 int main () {
 
-	int matriz[5][5];
+	int matriz[DIM][DIM];
 	
 	//Inicializando a matriz com zeros.	
 	inicializarMatriz (matriz);
@@ -69,13 +70,11 @@ int main () {
 	/*Inserindo arestas no grafo. Cada posição na matriz 
 	representa uma aresta.*/
 	inserir (matriz, 0, 1);
-	inserir (matriz, 0, 4);
+	inserir (matriz, 0, 2);
 	inserir (matriz, 1, 2);
 	inserir (matriz, 1, 3);
-	inserir (matriz, 2, 0);
-	inserir (matriz, 2, 4);
-	inserir (matriz, 3, 2);
-	inserir (matriz, 3, 4);
+	inserir (matriz, 2, 3);
+	inserir (matriz, 3, 0);
 		
 	
 	//Verifica se existe aresta enter os vértices 1 e 3.

@@ -1,0 +1,18 @@
+Visitei o segundo link(http://www.graphviz.org/) que o senhor mandou e achei muito interessante o programinha. Assim, criei um programa em C(C++) que escreve a arvore no formato esperado e já sai o desenho.
+
+Vou mandar anexo tanto o meu código quanto o desenho gerado. Vale lembrar que fiz tudo no linux, portanto, talvez algumas coisas não dê certo no windows. Ainda não fiz o teste.
+
+As únicas coisas necessárias para mudar, são essas duas linhas abaixo, pois trata-se da onde será gravada e armazenada a figura e o arquivo:
+
+   system("dot -Tpng /home/ricardo/Documentos/AED/desenho.dot > /home/ricardo/Documentos/AED/desenho.png");
+   file = fopen("/home/ricardo/Documentos/AED/desenho.dot", "w+");
+
+
+Para rodar é só compilar e rodar o programa.
+
+Caso o senhor tenha interesse em divulgar para outros alunos, fique a vontade.
+
+
+Att,
+
+Ricardo Gonçalves Dias
