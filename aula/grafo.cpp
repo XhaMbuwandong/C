@@ -63,7 +63,7 @@ bool existeAresta (VERTICE * grafo, int i, int vert) {
 }
 
 
-NO * criarNO (int vertice) {
+	NO * criarNO (int vertice) {
 	NO * p = (NO *) malloc (sizeof (NO));
 	p->v = vertice;
 	p->prox = NULL;
